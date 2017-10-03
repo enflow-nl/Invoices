@@ -133,6 +133,22 @@ trait Setters
     }
 
     /**
+     * Set the logo height in pixels
+     *
+     * @method logo_height
+     *
+     * @param int $height in pixels
+     *
+     * @return self
+     */
+    public function logo_height($height)
+    {
+        $this->logo_height = $height;
+
+        return $this;
+    }
+
+    /**
      * Set the invoice date.
      *
      * @method date
