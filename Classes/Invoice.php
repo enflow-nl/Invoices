@@ -351,4 +351,18 @@ class Invoice
 
         return $this->pdf->stream($name, ['Attachment' => false]);
     }
+
+    /**
+     * Get the generated pdf object
+     *
+     * @method raw
+     *
+     * @return Dompdf\Dompdf
+     */
+    public function raw()
+    {
+        $this->generate();
+
+        return $this->pdf;
+    }
 }
