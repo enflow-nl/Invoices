@@ -31,10 +31,8 @@ class PDF
      *
      * @return Dompdf\Dompdf
      */
-    public static function generate(Invoice $invoice, $template = 'default')
+    public static function generate(Invoice $invoice)
     {
-        $template = strtolower($template);
-
         $options = new Options();
 
         $options->set('isRemoteEnabled', true);
@@ -51,7 +49,7 @@ class PDF
 
         $pdf->setHttpContext($context);
 
-        $pdf->loadHtml(View::make('invoices::'.$template, ['invoice' => $invoice]));
+        $pdf->loadHtml(View::make(strtolower($invoice->template), ['invoice' => $invoice]));
         $pdf->render();
 
         return $pdf;

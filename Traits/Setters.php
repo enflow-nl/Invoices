@@ -37,6 +37,22 @@ trait Setters
     }
 
     /**
+     * Set the template path
+     *
+     * @method template
+     *
+     * @param string $template
+     *
+     * @return self
+     */
+    public function template($template)
+    {
+        $this->template = $template;
+
+        return $this;
+    }
+
+    /**
      * Set the invoice number.
      *
      * @method number

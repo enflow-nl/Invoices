@@ -31,6 +31,13 @@ class Invoice
     public $name;
 
     /**
+     * The template path
+     *
+     * @var string
+     */
+    public $template = 'invoices::default';
+
+    /**
      * Invoice item collection.
      *
      * @var Illuminate\Support\Collection
